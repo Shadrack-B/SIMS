@@ -14,8 +14,13 @@ class CreateLevelsTable extends Migration
     public function up()
     {
         Schema::create('levels', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('level_id');
+            $table->string('level');
+            $table->integer('course_id')->unsigned();
+            $table->longText('level_description');
+            $table->softDeletes();
             $table->timestamps();
+
         });
     }
 

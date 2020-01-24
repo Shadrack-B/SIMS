@@ -14,7 +14,9 @@ class CreateShiftsTable extends Migration
     public function up()
     {
         Schema::create('shifts', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('shift_id');
+            $table->string('shift');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
