@@ -15,12 +15,18 @@
                 <td>{{ $course->course_name }}</td>
             <td>{{ $course->course_code }}</td>
             <td>{{ $course->description }}</td>
-            <td>{{ $course->status }}</td>
+            <td> 
+                @if ($course->status == 1)
+                    <div class="text-success">Active</div>
+                @else
+                <div class="text-danger">Inactive</div>
+                @endif
+            </td>
                 <td>
-                    {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['courses.destroy', $course->course_id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('courses.show', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="{{ route('courses.edit', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{ route('courses.show', [$course->course_id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a href="{{ route('courses.edit', [$course->course_id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
