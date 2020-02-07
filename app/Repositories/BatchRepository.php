@@ -19,7 +19,7 @@ class BatchRepository extends BaseRepository
     protected $fieldSearchable = [
         'batch'
     ];
-
+    protected $primaryKey = 'batch_id';
     /**
      * Return searchable fields
      *
