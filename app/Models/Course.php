@@ -26,6 +26,7 @@ class Course extends Model
 
 
     protected $dates = ['deleted_at'];
+    protected $primaryKey = 'course_id';
 
 
 
@@ -35,6 +36,7 @@ class Course extends Model
         'description',
         'status'
     ];
+
 
     /**
      * The attributes that should be casted to native types.

@@ -22,6 +22,9 @@ class CourseRepository extends BaseRepository
         'description',
         'status'
     ];
+   
+    protected $primaryKey = 'course_id';
+
 
     /**
      * Return searchable fields
