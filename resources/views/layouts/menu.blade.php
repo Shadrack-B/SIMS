@@ -48,6 +48,10 @@
             <a href="{{ route('days.index') }}"><i class="fa fa-edit"></i><span>Days</span></a>
         </li>
 
+        <li class="{{ Request::is('semesters*') ? 'active' : '' }}">
+            <a href="{{ route('semesters.index') }}"><i class="fa fa-edit"></i><span>Semesters</span></a>
+        </li>
+
     </ul>
 </li>
 
@@ -96,3 +100,6 @@
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{{ route('users.index') }}"><i class="fa fa-user"></i><span>Users</span></a>
 </li>
+
+
+
